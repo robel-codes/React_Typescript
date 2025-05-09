@@ -10,6 +10,9 @@ import { UserContextProvider } from './components/context/UserContext';
 import { User } from './components/context/User';
 import { Box } from './components/context/Box';
 import { Counter } from './components/class/Counter';
+import { Private } from './components/auth/Private';
+import { Profile } from './components/auth/Profile';
+import { List } from './components/generics/List'
 
 function App() {
   const personName = {
@@ -33,6 +36,7 @@ function App() {
   ]
   return (
     <div className="App">
+      <Private isLoggedIn={true} component={Profile} />
       <ThemeContextProvider>
         <Box />
       </ThemeContextProvider>
@@ -46,6 +50,18 @@ function App() {
       <PersonList names={nameList} />
       <Button handleClick={(event, id) => console.log('Button Clicked',event, id)}/>
       <Input value='' handleChange={(event) => console.log(event)} />
+      <List 
+        items={['Batman', 'Superman', 'Wonder Woman']}
+        onClick={(item) => console.log(item)}
+      />
+      <List
+        items={[1, 2, 3]}
+        onClick={(item) => console.log(item)}
+      />
+      <List
+        items={[{first: 'Robel', last: 'Tadesse'}, {first: 'John', last: 'Doe'}]}
+        onClick={(item) => console.log(item)}
+      />
     </div>
   );
 }
