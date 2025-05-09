@@ -6,7 +6,11 @@ type AuthUser = {
 }
 
 export const User = () => {
-    const [user, setUser] = useState<AuthUser |null>(null)
+    const [user, setUser] = useState<AuthUser | null>(null) // inital value is different from the type of the state, so we need to use union type to define the type of the state. 
+                                                        // initial value is null and the type of the state is AuthUser. So we need to use union type to define the type of the state. initial value is null and the type of the state is AuthUser.
+
+    // or with type assertion
+    // const [user, setUser] = useState<AuthUser>({} as AuthUser) // inital value is different from the type of the state, so we need to use type assertion to define the type of the state.
 
     const handleLogin = () => {
         setUser({
