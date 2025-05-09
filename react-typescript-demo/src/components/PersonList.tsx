@@ -1,3 +1,5 @@
+// import { Name } from "./Person.types";
+
 type PersonListProps = {
     names: {
         first: string;
@@ -5,6 +7,11 @@ type PersonListProps = {
     }[]
  }
 
+
+ // OR
+// type PersonListProps = {
+//     names: Name[]
+// }
 
 
 export const PersonList = (props: PersonListProps ) => {
