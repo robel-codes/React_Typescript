@@ -5,6 +5,10 @@ import { PersonList } from './components/PersonList';
 import { Button } from './components/Button';
 import { Input } from './components/Input';
 import { Container } from './components/Container';
+import { ThemeContextProvider} from './components/context/ThemeContext';
+import { UserContextProvider } from './components/context/UserContext';
+import { User } from './components/context/User';
+import { Box } from './components/context/Box';
 
 function App() {
   const personName = {
@@ -28,6 +32,12 @@ function App() {
   ]
   return (
     <div className="App">
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
       <Container styles={{border: '1px solid black', padding: '20px', marginTop: '20px'}} />
       <Greet name='Robel' messageCount={15} isLoggedIn={false}/>
       <Person name={personName} />
