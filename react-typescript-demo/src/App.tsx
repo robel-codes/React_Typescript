@@ -4,6 +4,7 @@ import { Person } from './components/Person';
 import { PersonList } from './components/PersonList';
 import { Button } from './components/Button';
 import { Input } from './components/Input';
+import { Container } from './components/Container';
 
 function App() {
   const personName = {
@@ -27,6 +28,7 @@ function App() {
   ]
   return (
     <div className="App">
+      <Container styles={{border: '1px solid black', padding: '20px', marginTop: '20px'}} />
       <Greet name='Robel' messageCount={15} isLoggedIn={false}/>
       <Person name={personName} />
       <PersonList names={nameList} />
