@@ -9,6 +9,7 @@ import { ThemeContextProvider} from './components/context/ThemeContext';
 import { UserContextProvider } from './components/context/UserContext';
 import { User } from './components/context/User';
 import { Box } from './components/context/Box';
+import { Counter } from './components/class/Counter';
 
 function App() {
   const personName = {
@@ -38,6 +39,7 @@ function App() {
       <UserContextProvider>
         <User />
       </UserContextProvider>
+      <Counter message='Counter' />
       <Container styles={{border: '1px solid black', padding: '20px', marginTop: '20px'}} />
       <Greet name='Robel' messageCount={15} isLoggedIn={false}/>
       <Person name={personName} />
